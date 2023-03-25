@@ -1005,7 +1005,7 @@ x_x = loaded_encoder.transform(x_x)
 x_x[numerical_cols] = loaded_scaler.transform(x_x[numerical_cols])
 if st.button('Predict') :
     
-    prediction1 = loaded_model_rf.predict(x_x)
+    prediction1 = trained_model_xgboost.predict(x_x)
     accuarcy1 =loaded_model_rf.score(x_test , y_test) * 100
     
 
