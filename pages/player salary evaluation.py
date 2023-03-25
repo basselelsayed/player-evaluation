@@ -965,16 +965,16 @@ add_vertical_space()
 
 
 # loading the saved model
-loaded_model_rf = pickle.load(open('trained_model_rf.sav','rb'))
-loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
-trained_model_ridge = pickle.load(open('trained_model_ridge.sav','rb'))
-trained_model_lasso = pickle.load(open('trained_model_lasso.sav','rb'))
-trained_model_knn = pickle.load(open('trained_model_knn.sav','rb'))
-trained_model_svr =pickle.load(open('trained_model_svr.sav','rb'))
-trained_model_xgboost =pickle.load(open('trained_model_xgboost.sav','rb'))
+#loaded_model_rf = pickle.load(open('trained_model_rf.sav','rb'))
+#loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
+#trained_model_ridge = pickle.load(open('trained_model_ridge.sav','rb'))
+#trained_model_lasso = pickle.load(open('trained_model_lasso.sav','rb'))
+#trained_model_knn = pickle.load(open('trained_model_knn.sav','rb'))
+#trained_model_svr =pickle.load(open('trained_model_svr.sav','rb'))
+trained_model_xgboost =pickle.load(open('./trained_model_xgboost.sav','rb'))
 
-loaded_scaler = pickle.load(open('scaler.sav','rb'))
-loaded_encoder = pickle.load(open('encoder.sav','rb'))
+loaded_scaler = pickle.load(open('./scaler.sav','rb'))
+loaded_encoder = pickle.load(open('./encoder.sav','rb'))
 input_data = { 'overall': [overall], 'potential':[potential], 'wage_eur':[wage], 'age':[age], 'height_cm':[height], 'weight_kg':[weight],
         'league_name' :league_name, 'league_level' : [league_level], 'club_position' : ['CF'],
        'club_jersey_number' : [club_jersey_number], 
