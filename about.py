@@ -29,7 +29,6 @@ def add_vertical_space(num_lines: int = 5):
 from streamlit_extras.app_logo import add_logo
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.let_it_rain import rain
-from streamlit_toggle import st_toggle_switch
 from streamlit_extras.no_default_selectbox import selectbox
 
 
