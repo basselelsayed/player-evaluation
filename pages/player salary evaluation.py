@@ -958,7 +958,7 @@ add_vertical_space()
 add_vertical_space()
 
 
-trained_model_xgboost =pickle.load(open('trained_model_xgboost.sav','rb'))
+model =pickle.load(open('trained_model_xgboost.sav','rb'))
 
 
 #loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
@@ -1002,8 +1002,8 @@ x_x = loaded_encoder.transform(x_x)
 x_x[numerical_cols] = loaded_scaler.transform(x_x[numerical_cols])
 if st.button('Predict') :
     
-    prediction1 = trained_model_xgboost.predict(x_x)
-    accuarcy1 =trained_model_xgboost.score(x_test , y_test) * 100
+    prediction1 = model.predict(x_x)
+    accuarcy1 =model.score(x_test , y_test) * 100
     
     col1, col2 = st.columns(2)
     col1.metric(label="Price", value=prediction1[0])
