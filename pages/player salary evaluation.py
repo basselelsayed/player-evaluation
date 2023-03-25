@@ -12,6 +12,7 @@ from category_encoders import BinaryEncoder
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, OrdinalEncoder
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LogisticRegression
+from xgboost import XGBRegressor
 import pickle
 from st_keyup import st_keyup
 from streamlit_extras.word_importances import format_word_importances
