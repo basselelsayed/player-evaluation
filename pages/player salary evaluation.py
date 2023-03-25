@@ -1006,12 +1006,11 @@ if st.button('Predict') :
     
     prediction1 = loaded_model_lr.predict(x_x)
     accuarcy1 =loaded_model_lr.score(x_test , y_test) * 100
-    st.write(predection1)
-    st.write(accuracy1)
-    #col1, col2 = st.columns(2)
-    #col1.metric(label="Price", value=prediction1[0])
-    #col2.metric(label="Accuracy", value=round(accuarcy1) )
-    #style_metric_cards()
+    
+    col1, col2 = st.columns(2)
+    col1.metric(label="Price", value=prediction1[0])
+    col2.metric(label="Accuracy", value=round(accuarcy1) )
+    style_metric_cards()
 
 
 
