@@ -958,7 +958,7 @@ add_vertical_space()
 add_vertical_space()
 
 
-model =pickle.load(open('trained_model_xgboost.sav','rb'))
+model =pickle.load(open('./trained_model_xgboost.sav','rb'))
 
 
 #loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
