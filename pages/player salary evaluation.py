@@ -990,7 +990,7 @@ input_data = { 'overall': [overall], 'potential':[potential], 'wage_eur':[wage],
        'lm' : [lm], 'lcm' : [lcm], 'cm' : [cm], 'rcm' : [rcm], 'rm' : [rm], 'lwb' : [lwb], 'ldm' : [ldm], 'cdm' : [cdm], 'rdm' : [rdm], 'rwb' : [rwb], 'lb' : [lb],
        'lcb' : [lcb], 'cb' : [cb], 'rcb' : [rcb], 'rb' : [rb], 'gk' : [gk], 'loyality' : [loyality] } 
 
-trained_model_svr =pickle.load(open(./'trained_model_svr.sav','rb'))
+trained_model_svr =pickle.load(open('./trained_model_svr.sav','rb'))
 loaded_scaler = pickle.load(open('scaler.sav','rb'))
 loaded_encoder = pickle.load(open('encoder.sav','rb'))
 
