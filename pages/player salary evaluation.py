@@ -12,7 +12,6 @@ from category_encoders import BinaryEncoder
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, OrdinalEncoder
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LogisticRegression
-from xgboost import XGBRegressor
 import pickle
 from st_keyup import st_keyup
 from streamlit_extras.word_importances import format_word_importances
@@ -962,17 +961,16 @@ add_vertical_space()
 
 
 
-
+loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
 
 
 # loading the saved model
 #loaded_model_rf = pickle.load(open('trained_model_rf.sav','rb'))
-#loaded_model_lr = pickle.load(open('trained_model_lr.sav','rb'))
 #trained_model_ridge = pickle.load(open('trained_model_ridge.sav','rb'))
 #trained_model_lasso = pickle.load(open('trained_model_lasso.sav','rb'))
 #trained_model_knn = pickle.load(open('trained_model_knn.sav','rb'))
 #trained_model_svr =pickle.load(open('trained_model_svr.sav','rb'))
-trained_model_xgboost =pickle.load(open('./trained_model_xgboost.sav','rb'))
+#trained_model_xgboost =pickle.load(open('./trained_model_xgboost.sav','rb'))
 
 loaded_scaler = pickle.load(open('./scaler.sav','rb'))
 loaded_encoder = pickle.load(open('./encoder.sav','rb'))
@@ -1006,14 +1004,14 @@ x_x = loaded_encoder.transform(x_x)
 x_x[numerical_cols] = loaded_scaler.transform(x_x[numerical_cols])
 if st.button('Predict') :
     
-    prediction1 = trained_model_xgboost.predict(x_x)
-    accuarcy1 =trained_model_xgboost.score(x_test , y_test) * 100
-    
-
-    col1, col2 = st.columns(2)
-    col1.metric(label="Price", value=prediction1[0])
-    col2.metric(label="Accuracy", value=round(accuarcy1) )
-    style_metric_cards()
+    prediction1 = loaded_model_lr.predict(x_x)
+    accuarcy1 =loaded_model_lr.score(x_test , y_test) * 100
+    st.write(predection1)
+    st.write(accuracy1)
+    #col1, col2 = st.columns(2)
+    #col1.metric(label="Price", value=prediction1[0])
+    #col2.metric(label="Accuracy", value=round(accuarcy1) )
+    #style_metric_cards()
 
 
 
