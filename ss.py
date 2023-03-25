@@ -17,14 +17,14 @@ from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LogisticRegression
 
 # Read data 
-df15 = pd.read_csv("F:\AI corse\\final project\sources\players_15.csv")
-df16 = pd.read_csv("F:\AI corse\\final project\sources\players_16.csv")
-df17 = pd.read_csv("F:\AI corse\\final project\sources\players_17.csv")
-df18 = pd.read_csv("F:\AI corse\\final project\sources\players_18.csv")
-df19 = pd.read_csv("F:\AI corse\\final project\sources\players_19.csv")
-df20 = pd.read_csv("F:\AI corse\\final project\sources\players_20.csv")
-df21 = pd.read_csv("F:\AI corse\\final project\sources\players_21.csv")
-df22 = pd.read_csv("F:\AI corse\\final project\sources\players_22.csv")
+df15 = pd.read_csv("sources/players_15.csv")
+df16 = pd.read_csv("sources/players_16.csv")
+df17 = pd.read_csv("sources/players_17.csv")
+df18 = pd.read_csv("sources/players_18.csv")
+df19 = pd.read_csv("sources/players_19.csv")
+df20 = pd.read_csv("sources/players_20.csv")
+df21 = pd.read_csv("sources/players_21.csv")
+df22 = pd.read_csv("sources/players_22.csv")
 # Compine the data
 df =pd.concat([df15,df16,df17,df18,df19,df20,df21,df22])
 df.shape
