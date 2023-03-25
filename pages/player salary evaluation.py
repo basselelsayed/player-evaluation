@@ -966,10 +966,7 @@ add_vertical_space()
 
 # loading the saved model
 
-trained_model_xgboost =pickle.load(open('trained_model_xgboost.sav','rb'))
 
-loaded_scaler = pickle.load(open('scaler.sav','rb'))
-loaded_encoder = pickle.load(open('encoder.sav','rb'))
 input_data = { 'overall': [overall], 'potential':[potential], 'wage_eur':[wage], 'age':[age], 'height_cm':[height], 'weight_kg':[weight],
         'league_name' :league_name, 'league_level' : [league_level], 'club_position' : ['CF'],
        'club_jersey_number' : [club_jersey_number], 
@@ -993,6 +990,10 @@ input_data = { 'overall': [overall], 'potential':[potential], 'wage_eur':[wage],
        'lm' : [lm], 'lcm' : [lcm], 'cm' : [cm], 'rcm' : [rcm], 'rm' : [rm], 'lwb' : [lwb], 'ldm' : [ldm], 'cdm' : [cdm], 'rdm' : [rdm], 'rwb' : [rwb], 'lb' : [lb],
        'lcb' : [lcb], 'cb' : [cb], 'rcb' : [rcb], 'rb' : [rb], 'gk' : [gk], 'loyality' : [loyality] } 
 
+trained_model_svr =pickle.load(open('trained_model_svr.sav','rb'))
+loaded_scaler = pickle.load(open('scaler.sav','rb'))
+loaded_encoder = pickle.load(open('encoder.sav','rb'))
+
 from streamlit_extras.metric_cards import style_metric_cards
 x_x = pd.DataFrame.from_dict(input_data)
 numerical_cols = list(x_train.select_dtypes(include=['int64', 'float64','int32']).columns)
@@ -1000,8 +1001,8 @@ x_x = loaded_encoder.transform(x_x)
 x_x[numerical_cols] = loaded_scaler.transform(x_x[numerical_cols])
 if st.button('Predict') :
     
-    prediction1 = trained_model_xgboost.predict(x_x)
-    accuarcy1 =trained_model_xgboost.score(x_test , y_test) * 100
+    prediction1 = trained_model_svr.predict(x_x)
+    accuarcy1 =trained_model_svr.score(x_test , y_test) * 100
     
 
     col1, col2 = st.columns(2)
