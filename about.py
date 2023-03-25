@@ -33,15 +33,7 @@ from streamlit_toggle import st_toggle_switch
 from streamlit_extras.no_default_selectbox import selectbox
 
 
-if st_toggle_switch("dont touch"):
-    rain(
-    emoji="⚽️",
-    font_size=54,
-    falling_speed=5,
-    animation_length="infinite",
-)
-else:
-    pass
+
 
 
 
