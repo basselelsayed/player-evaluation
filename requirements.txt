@@ -7,3 +7,5 @@ streamlit_keyup
 streamlit_toggle
 streamlit_toggle_switch
 xgboost==1.7.3
+numpy==1.23.5
+pandas==1.5.2
