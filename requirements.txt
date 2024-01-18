@@ -1,9 +1,9 @@
 plotly==5.10.0
 scikit_learn==1.2.2
 category_encoders==2.5.1.post0
-streamlit==1.20.0
-streamlit_extras==0.2.6
-streamlit_keyup==0.2.0
-streamlit_toggle==0.1.3
-streamlit_toggle_switch==1.0.2
+streamlit
+streamlit_extras
+streamlit_keyup
+streamlit_toggle
+streamlit_toggle_switch
 xgboost==1.7.3
